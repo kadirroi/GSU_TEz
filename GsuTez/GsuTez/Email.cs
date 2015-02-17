@@ -33,7 +33,7 @@ namespace GsuTez
             using (Imap imap = new Imap())
             {
                 imap.ConnectSSL("imap.gmail.com");
-                imap.UseBestLogin("mailgsu2@gmail.com", "kadir55555");
+                imap.UseBestLogin("mailgsu2@gmail.com", "");
                 imap.SelectInbox();
                 List<long> uids = imap.Search(Flag.All);
                 Console.WriteLine("Email Sayiyis:" + uids.Count);
@@ -75,7 +75,7 @@ namespace GsuTez
             using (Pop3 pop3 = new Pop3())
             {
                 pop3.ConnectSSL("pop.gmail.com");
-                pop3.UseBestLogin("mailgsu2@gmail.com", "kadir55555");
+                pop3.UseBestLogin("mailgsu2@gmail.com", "");
 
                 List<string> uids = pop3.GetAll();
                 Console.WriteLine("Uids : " + uids.Count);
@@ -107,7 +107,7 @@ namespace GsuTez
             using (Smtp smtp = new Smtp())
             {
                 smtp.Connect("smtp.gmail.com");  // or ConnectSSL for SSL
-                smtp.UseBestLogin("mailgsu2@gmail.com", "kadir55555");
+                smtp.UseBestLogin("mailgsu2@gmail.com", "");
                 smtp.SendMessage(email);
                 Console.WriteLine("Send Mail");
                 smtp.Close();
